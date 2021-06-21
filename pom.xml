@@ -14,7 +14,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <name>URL Filter</name>
-    <description>Filters URLs and responses with HTTP 503 when they matched</description>
+    <description>Filters URLs on Jenkins and responses with HTTP 503 when they matched</description>
     <url></url>
     <licenses>
         <license>

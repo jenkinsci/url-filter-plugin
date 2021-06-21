@@ -1,4 +1,4 @@
 <?jelly escape-by-default='true'?>
 <div>
-Filters URLs and responses with HTTP 503 when they matched
+    Filters URLs on Jenkins and responses with HTTP 503 when they matched
 </div>
