@@ -30,8 +30,8 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git@github.com:jenkinsci/url-filter-plugin.git</connection>
-        <developerConnection>scm:git@github.com:jenkinsci/url-filter-plugin.git</developerConnection>
+        <connection>scm:git:ssh://github.com/jenkinsci/url-filter-plugin.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/jenkinsci/url-filter-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/url-filter-plugin</url>
         <tag>HEAD</tag>
     </scm>
