@@ -38,3 +38,4 @@ Filter pattern: ```.*/cli$```
 
 ## Restrict Api Usage
 Filter pattern: ```.*/api/.*```
+Filter pattern: ```.*/crumbIssuer/.*```
