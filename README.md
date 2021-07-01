@@ -27,3 +27,14 @@ Every matched and blocked request will be logged in Jenkins log.
 Additionally, if you need to see more details about plugin flow, you can set logger in ```System Log``` section in Jenkins.
 
 Add a Logger with this package name ```org.jenkins.plugins.urlFilter``` and set log level to ```ALL```.
+
+# Filtering Examples
+
+## Restrict Api Creation for user
+Filter pattern: ```.*jenkins\.security\.ApiTokenProperty/.*```
+
+## Restrict CLI Usage 
+Filter pattern: ```.*/cli$```
+
+## Restrict Api Usage
+Filter pattern: ```.*/api/.*```
