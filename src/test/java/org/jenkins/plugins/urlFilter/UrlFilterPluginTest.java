@@ -54,6 +54,15 @@ public class UrlFilterPluginTest {
     }
 
     @Test
+    public void testRequestFilterWithNoMatchingUser() throws Exception {
+        jenkins.jenkins.setSecurityRealm(new SecurityRealmImpl());
+        jenkins.jenkins.setAuthorizationStrategy(new MockAuthorizationStrategy().
+                grant(Jenkins.ADMINISTER).everywhere().to("janice"));
+        wc.login("janice");
+        wc.assertFails("whoAmI", 403);
+    }
+
+    @Test
     public void testRequestFilterWithUsers() throws Exception {
         jenkins.jenkins.setSecurityRealm(new SecurityRealmImpl());
         jenkins.jenkins.setAuthorizationStrategy(new MockAuthorizationStrategy()
@@ -71,7 +80,13 @@ public class UrlFilterPluginTest {
         jenkins.jenkins.setSecurityRealm(new SecurityRealmImpl());
         jenkins.jenkins.setAuthorizationStrategy(new MockAuthorizationStrategy()
                 .grant(Jenkins.READ).everywhere().to("michael")
+                .grant(Jenkins.READ).everywhere().to("alice")
+                .grant(Jenkins.READ).everywhere().to("bob")
         );
+        wc.login("alice");
+        wc.goTo("whoAmI");
+        wc.login("bob");
+        wc.goTo("whoAmI");
         wc.login("michael");
         wc.goTo("whoAmI");
     }
