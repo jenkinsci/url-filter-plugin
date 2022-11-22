@@ -26,7 +26,8 @@ public class UrlFilterPluginTest {
     private String filterRegex = ".*whoAmI.*";
     private String userAlice = "alice";
     private String userBob = "bob";
-    private String excludedUsers = userAlice + " " + userBob;
+    private String userMichaelRegex = "mic.*";
+    private String excludedUsers = userAlice + " " + userBob + " " + userMichaelRegex;
 
     @Before
     public void setup() throws Exception {
@@ -63,6 +64,26 @@ public class UrlFilterPluginTest {
         wc.goTo("whoAmI");
         wc.login("bob");
         wc.goTo("whoAmI");
+    }
+
+    @Test
+    public void testRequestFilterWithRegex() throws Exception {
+        jenkins.jenkins.setSecurityRealm(new SecurityRealmImpl());
+        jenkins.jenkins.setAuthorizationStrategy(new MockAuthorizationStrategy()
+                .grant(Jenkins.READ).everywhere().to("michael")
+        );
+        wc.login("michael");
+        wc.goTo("whoAmI");
+    }
+
+    @Test
+    public void testRequestFilterWithNotMatchingRegex() throws Exception {
+        jenkins.jenkins.setSecurityRealm(new SecurityRealmImpl());
+        jenkins.jenkins.setAuthorizationStrategy(new MockAuthorizationStrategy()
+                .grant(Jenkins.READ).everywhere().to("jack")
+        );
+        wc.login("jack");
+        wc.assertFails("whoAmI", 403);
     }
 
     public void configure(JenkinsRule j, JenkinsRule.WebClient wc, String filterRegex, String excludedUsers) throws Exception {

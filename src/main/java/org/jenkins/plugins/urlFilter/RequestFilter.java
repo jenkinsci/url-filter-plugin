@@ -104,7 +104,7 @@ public class RequestFilter implements Filter {
         String[] excludesUsersList = excludedUsers.split(" ");
         for (String excludedUser : excludesUsersList) {
             LOGGER.fine("Checking if logged in user matches with user:" + excludedUser);
-            if (excludedUser.equals(loggedInUser)) {
+            if (loggedInUser.equals(excludedUser) || loggedInUser.matches(excludedUser)) {
                 LOGGER.fine("Users are matched. Returning true");
                 return true;
             }

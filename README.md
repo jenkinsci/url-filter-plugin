@@ -9,7 +9,7 @@ Because of security reasons, some of these requests may need to be blocked.
 
 In summary, with Administrative Filter Plugin,
 -   You can define filter patterns (Regex) for Http Request URIs
--   You can define users for excluding from filter patterns.
+-   You can define usernames or regex patterns for excluding loggedIn users from url restrictions.
 
 # Configuration
 Plugin configuration is stored under Jenkins - Configure System page.
@@ -39,3 +39,6 @@ Filter pattern: ```.*/cli$```
 ## Restrict Api Usage
 Filter pattern: ```.*/api/.*```
 Filter pattern: ```.*/crumbIssuer/.*```
+
+## Exclude User with Regex
+Excluded Users: "bob alice mic.*"
