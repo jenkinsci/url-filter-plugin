@@ -1,8 +1,8 @@
 package org.jenkins.plugins.urlFilter;
 
 
-import com.gargoylesoftware.htmlunit.html.HtmlForm;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import org.htmlunit.html.HtmlForm;
+import org.htmlunit.html.HtmlPage;
 import hudson.security.AbstractPasswordBasedSecurityRealm;
 import hudson.security.GroupDetails;
 import jenkins.model.Jenkins;
@@ -106,8 +106,8 @@ public class UrlFilterPluginTest {
         HtmlForm form = configure.getFormByName("config");
         j.getButtonByCaption(form, "Add Filter").click();
         wc.waitForBackgroundJavaScript(2000);
-        form.getInputByName("_.filterRegex").setValueAttribute(filterRegex);
-        form.getInputByName("_.excludedUsers").setValueAttribute(excludedUsers);
+        form.getInputByName("_.filterRegex").setValue(filterRegex);
+        form.getInputByName("_.excludedUsers").setValue(excludedUsers);
         j.submit(form);
     }
 
