@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>url-filter</artifactId>
-    <version>1.3</version>
+    <version>1.4-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <name>URL Filter</name>
     <description>Filters URLs on Jenkins and responses with HTTP 503 when they matched</description>
@@ -31,7 +31,7 @@
         <connection>scm:git:ssh://github.com/jenkinsci/url-filter-plugin.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/jenkinsci/url-filter-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/url-filter-plugin</url>
-        <tag>url-filter-1.3</tag>
+        <tag>HEAD</tag>
     </scm>
     <properties>
         <java.level>11</java.level>
