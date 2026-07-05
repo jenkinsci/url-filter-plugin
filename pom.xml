@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>url-filter</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>${revision}${changelist}</version>
     <packaging>hpi</packaging>
     <name>URL Filter</name>
     <description>Filters URLs on Jenkins and responses with HTTP 503 when they matched</description>
@@ -28,12 +28,15 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:ssh://github.com/jenkinsci/url-filter-plugin.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/jenkinsci/url-filter-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/url-filter-plugin</url>
-        <tag>HEAD</tag>
+        <connection>scm:git:ssh://github.com/${gitHubRepo}.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/${gitHubRepo}.git</developerConnection>
+        <url>https://github.com/${gitHubRepo}</url>
+        <tag>${scmTag}</tag>
     </scm>
     <properties>
+        <revision>1.4</revision>
+        <changelist>-SNAPSHOT</changelist>
+        <gitHubRepo>jenkinsci/url-filter-plugin</gitHubRepo>
         <java.level>11</java.level>
         <java.version>11</java.version>
         <jenkins.version>2.387.1</jenkins.version>
@@ -69,7 +72,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>1.18.46</version>
         </dependency>
     </dependencies>
 </project>
