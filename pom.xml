@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>6.2153.vcf31911d10c4</version>
+        <version>4.71</version>
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
@@ -34,21 +34,19 @@
         <tag>${scmTag}</tag>
     </scm>
     <properties>
-        <revision>6999999</revision>
+        <revision>1.4</revision>
         <changelist>-SNAPSHOT</changelist>
         <gitHubRepo>jenkinsci/url-filter-plugin</gitHubRepo>
-        <java.level>21</java.level>
-        <java.version>21</java.version>
-        <jenkins.baseline>2.504</jenkins.baseline>
-        <jenkins.version>${jenkins.baseline}.3</jenkins.version>
-        <changelist>999999-SNAPSHOT</changelist>
+        <java.level>11</java.level>
+        <java.version>11</java.version>
+        <jenkins.version>2.387.1</jenkins.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-${jenkins.baseline}.x</artifactId>
-                <version>5015.vb_52d36583443</version>
+                <artifactId>bom-2.387.x</artifactId>
+                <version>2102.v854b_fec19c92</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -67,6 +65,10 @@
         </pluginRepository>
     </pluginRepositories>
     <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>apache-httpcomponents-client-4-api</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
