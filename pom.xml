@@ -36,15 +36,16 @@
     <properties>
         <java.level>21</java.level>
         <java.version>21</java.version>
-        <jenkins.version>2.541.3</jenkins.version>
+        <jenkins.baseline>2.504</jenkins.baseline>
+        <jenkins.version>${jenkins.baseline}.3</jenkins.version>
         <changelist>999999-SNAPSHOT</changelist>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.541.x</artifactId>
-                <version>6418.vf54872a_65165</version>
+                <artifactId>bom-${jenkins.baseline}.x</artifactId>
+                <version>5015.vb_52d36583443</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
