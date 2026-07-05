@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.71</version>
+        <version>6.2153.vcf31911d10c4</version>
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
@@ -34,8 +34,8 @@
         <tag>HEAD</tag>
     </scm>
     <properties>
-        <java.level>17</java.level>
-        <java.version>17</java.version>
+        <java.level>21</java.level>
+        <java.version>21</java.version>
         <jenkins.version>2.541.3</jenkins.version>
         <changelist>999999-SNAPSHOT</changelist>
     </properties>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>1.18.46</version>
         </dependency>
     </dependencies>
 </project>
